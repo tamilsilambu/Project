@@ -13,7 +13,7 @@ public static void main(String[] args) throws InterruptedException {
 	System.setProperty("webdriver.chrome.driver", "C:\\Users\\tamilarasan\\eclipse-workspace\\New\\Selenium\\driver\\chromedriver.exe");
 	WebDriver driver= new ChromeDriver();
 	driver.get("https://www.facebook.com/");
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	driver.manage().window().maximize();
 	WebElement acc = driver.findElement(By.xpath("//a[text()='Create new account']"));
 	acc.click();
 	Thread.sleep(2000);
@@ -27,7 +27,7 @@ public static void main(String[] args) throws InterruptedException {
 	WebElement dropyear = driver.findElement(By.id("year"));
 	Select s2= new Select(dropyear);
 	s2.selectByValue("1991");
-	
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	
 	
 	
