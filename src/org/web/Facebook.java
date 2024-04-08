@@ -1,5 +1,7 @@
 package org.web;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,7 +27,7 @@ public static void main(String[] args) throws InterruptedException {
 	WebElement dropyear = driver.findElement(By.id("year"));
 	Select s2= new Select(dropyear);
 	s2.selectByValue("1991");
-	
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	
 	
 	
